@@ -1,10 +1,26 @@
+.bar-nav
+  %h1.title Linker
 
-- if current_user
-  %h1 Welcome #{current_user.profile.first_name}
-- else 
-  = link_to 'Login with LinkedIn', auth_at_provider_path(:provider => :linkedin)
+.onboard
 
-%hr
-  
+.content-padded
+  %p Welcome to Linker
+
+  %hr
+
+  %h1 StaticPages#index
+  %p Find me in app/views/static_pages/index.html.haml
+
+.bar-footer
+  .button-login
+    - if current_user
+      %h1 Welcome #{current_user.profile.first_name}
+    - else
+      = link_to 'Login with LinkedIn', auth_at_provider_path(:provider => :linkedin)
+  .login-copy We never post anything to LinkedIn.
+
 %h1 StaticPages#index
 %p Find me in app/views/static_pages/index.html.haml
+
+
+

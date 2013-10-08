@@ -1,0 +1,46 @@
+.bar-nav
+  %h1.title Linker
+
+<<<<<<< HEAD
+.onboard
+
+.content-padded
+  %p Welcome to Linker
+
+  %hr
+  
+  %h1 StaticPages#index
+  %p Find me in app/views/static_pages/index.html.haml
+
+.bar-footer.padded
+  .button-block
+    - if current_user
+      %h1 Welcome #{current_user.profile.first_name}
+    - else 
+      = link_to 'Login with LinkedIn', auth_at_provider_path(:provider => :linkedin)
+  .login-copy We never post anything to LinkedIn.
+  #map_canvas
+  
+%h1 StaticPages#index
+%p Find me in app/views/static_pages/index.html.haml
+
+
+= content_for :scripts do 
+  :coffee
+    jQuery -> 
+      pos = new google.maps.LatLng("#{@location.latitude}", "#{@location.longitude}")
+      mapOptions = { 
+        zoom: 13
+        zoomControl: false,
+        disableDefaultUI: true,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+        center: pos
+      }
+      map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+      marker = new google.maps.Marker({
+        position: pos
+        map: map
+        title: 'Hello World!'
+      })
+
+      map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);

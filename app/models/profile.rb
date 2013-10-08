@@ -1,7 +1,6 @@
 class Profile < ActiveRecord::Base
   belongs_to :user, inverse_of: :profile
 
-
   def first_name=(value)
     value = value.present? ? value.nameize : nil
     write_attribute :first_name, value
