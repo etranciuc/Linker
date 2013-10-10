@@ -86,7 +86,7 @@ Rails.application.config.sorcery.configure do |config|
   #
   config.linkedin.key = ENV['LINKEDIN_API_KEY']
   config.linkedin.secret = ENV['LINKEDIN_SECRET_KEY']
-  config.linkedin.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=linkedin"
+  config.linkedin.callback_url = "http://10.0.1.4:3000/oauth/callback?provider=linkedin"
   config.linkedin.user_info_fields = ['first-name', 'last-name']
   config.linkedin.user_info_mapping = {first_name: "firstName", last_name: "lastName"}
   config.linkedin.access_permissions = ['r_fullprofile', 'r_contactinfo', 'rw_groups', 'r_emailaddress']
