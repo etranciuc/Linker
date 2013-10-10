@@ -10,7 +10,6 @@
 = content_for :scripts do
   :coffee
     jQuery ->
-
       show_error = (error) ->
         # Geolocation not authorized
         if error.code == 1
@@ -20,6 +19,7 @@
 
 
       acquire_position = (geo_position) ->
+
         # Create a custom position object to display map
         position = {
           latitude: geo_position.coords.latitude
@@ -69,5 +69,7 @@
       if navigator.geolocation 
         navigator.geolocation.getCurrentPosition(acquire_position, show_error)
       else
+
+
         $('.message').text("Sorry, we need geolocation info")
 

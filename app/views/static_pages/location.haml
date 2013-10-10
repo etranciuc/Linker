@@ -10,6 +10,7 @@
 = content_for :scripts do
   :coffee
     jQuery ->
+      alert "OK"
       if navigator.geolocation 
         navigator.geolocation.getCurrentPosition(acquire_position, show_error)
       else
