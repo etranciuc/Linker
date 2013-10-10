@@ -254,8 +254,9 @@ strong {
   right: 0;
   left:0;
   bottom:0;
+  height:100%;
   z-index: 10;
-  overflow: auto;
+  overflow: none;
   color:red;
   -webkit-overflow-scrolling: touch;
 }
@@ -808,7 +809,6 @@ input[type="button"] {
   width: 100%;
 }
 
-
 .chevron {
   display: block;
   height: 20px;
@@ -832,161 +832,6 @@ input[type="button"] {
   transform: rotate(-45deg);
 }
 
-[class*="count"] {
-  display: inline-block;
-  color: #929292;
-}
-[class*="count"].count-filled {
-  padding: 2px 9px;
-  color: #fff;
-  font-size: 13px;
-  line-height: 1;
-  background-color: #929292;
-  border-radius: 100px;
-}
-
-.count-primary {
-  color: #007aff;
-}
-.count-primary.count-filled {
-  background-color: #007aff;
-}
-
-.count-positive {
-  color: #4cd964;
-}
-.count-positive.count-filled {
-  background-color: #4cd964;
-}
-
-.count-negative {
-  color: #dd524d;
-}
-.count-negative.count-filled {
-  background-color: #dd524d;
-}
-
-[class*="button"] [class*="count"] {
-  font-size: 12px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  margin: -2px -4px -2px 4px;
-}
-
-.button-filled .count-filled,
-[class*="button"]:active .count-filled {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.button-block [class*="count"] {
-  position: absolute;
-  right: 0;
-  margin-right: 10px;
-}
-
-.segmented-controller {
-  display: -webkit-box;
-  display: box;
-  padding: 0;
-  margin: 0 0 10px 0;
-  overflow: hidden;
-  font-size: 12px;
-  font-weight: 400;
-  list-style: none;
-  background-color: transparent;
-  border: 1px solid #007aff;
-  border-radius: 4px;
-  -webkit-box-orient: horizontal;
-  box-orient: horizontal;
-}
-.segmented-controller li {
-  overflow: hidden;
-  text-align: center;
-  white-space: nowrap;
-  border-left: 1px solid #007aff;
-  -webkit-box-flex: 1;
-  box-flex: 1;
-  -webkit-transition: background-color 0.1s linear;
-  transition: background-color 0.1s linear;
-}
-.segmented-controller li > a {
-  display: block;
-  padding: 6px 16px 7px;
-  overflow: hidden;
-  line-height: 1;
-  color: #007aff;
-  text-overflow: ellipsis;
-}
-.segmented-controller li:first-child {
-  border-left-width: 0;
-}
-.segmented-controller li:active {
-  background-color: #d5e9ff;
-}
-.segmented-controller li.selected {
-  background-color: #007aff;
-}
-.segmented-controller li.selected > a {
-  color: #fff;
-}
-
-.segmented-controller-item {
-  display: none;
-}
-.segmented-controller-item.selected {
-  display: block;
-}
-
-[class*="bar-"] .segmented-controller {
-  margin: 3px 0;
-  -webkit-box-flex: 1;
-  box-flex: 1;
-}
-
-.bar-nav .segmented-controller {
-  margin-bottom: 4px;
-}
-
-[class*="bar-"] .segmented-controller + [class*="button"],
-[class*="bar-"] [class*="button"] + .segmented-controller {
-  margin-left: 10px;
-}
-
-.popover {
-  position: fixed;
-  top: 55px;
-  left: 50%;
-  z-index: 20;
-  display: none;
-  width: 280px;
-  margin-left: -140px;
-  background-color: rgba(247, 247, 247, 0.98);
-  border-radius: 12px;
-  opacity: 0;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  -webkit-transform: translate3d(0, -15px, 0);
-  transform: translate3d(0, -15px, 0);
-  -webkit-transition: -webkit-transform 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-  transition: -webkit-transform 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-}
-.popover:after {
-  position: absolute;
-  top: -15px;
-  left: 50%;
-  width: 0;
-  height: 0;
-  margin-left: -15px;
-  content: '';
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid rgba(247, 247, 247, 0.98);
-  border-left: 15px solid transparent;
-}
-.popover.visible {
-  opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-
 .backdrop {
   position: fixed;
   top: 0;
@@ -997,33 +842,6 @@ input[type="button"] {
   background-color: rgba(0, 0, 0, 0.15);
 }
 
-.modal {
-  position: fixed;
-  top: 0;
-  opacity: 0;
-  z-index: 11;
-  width: 100%;
-  min-height: 100%;
-  overflow: hidden;
-  background-color: #fff;
-  -webkit-transform: translate3d(0, 100%, 0);
-  transform: translate3d(0, 100%, 0);
-  -webkit-transition: -webkit-transform 0.25s, opacity 0.25s;
-  transition: -webkit-transform 0.25s, opacity 0.25s;
-  -webkit-transition-timing-function: cubic-bezier(0.1, 0.5, 0.1, 1);
-  transition-timing-function: cubic-bezier(0.1, 0.5, 0.1, 1);
-}
-.modal.active {
-  opacity: 1;
-  height: 100%;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-transition: -webkit-transform 0.25s;
-  transition: -webkit-transform 0.25s;
-  -webkit-transition-timing-function: cubic-bezier(0.1, 0.5, 0.1, 1);
-  transition-timing-function: cubic-bezier(0.1, 0.5, 0.1, 1);
-}
-
 .slider,
 .slider > li {
   width: 100%;
@@ -1032,30 +850,11 @@ input[type="button"] {
 
 .slider {
   position: relative;
-  top:80px;
+  top:20px;
+  height: 550px;
   z-index: 50;
   overflow: hidden;
   background: none;
-
-}
-
-.slider-image {
-  margin-left: 50px;
-  margin-right: auto;
-  height: 600px;
-
-}
-
-.slider .slide-text {
-  position: absolute;
-  top: 45%;
-  left: 0;
-  width: 100%;
-  color: #fff;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 300;
-  text-shadow: 0 0 10px rgba(0,0,0,.5);
 }
 
 .slider > ul {
@@ -1066,64 +865,48 @@ input[type="button"] {
   -webkit-transition: all 0 linear;
   transition: all 0 linear;
 }
+
 .slider > ul > li {
   display: inline-block;
   vertical-align: top;
   width: 100%;
   height: 100%;
 }
+
 .slider > ul > li > * {
-  font-size: 14px;
+  font-size: 17px;
+  font-weight: 100;
 }
 
-.toggle {
-  position: relative;
-  width: 47px;
-  height: 30px;
-  background-color: #fff;
-  border: 2px solid #e6e6e6;
-  border-radius: 20px;
-  -webkit-box-shadow: inset 0 0 0 0 #e1e1e1;
-  box-shadow: inset 0 0 0 0 #e1e1e1;
-  -webkit-transition-property: box-shadow, border;
-  transition-property: box-shadow, border;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-}
-.toggle .toggle-handle {
+.slider > ul > li > span {
   position: absolute;
-  top: -1px;
-  left: -1px;
-  z-index: 2;
-  width: 28px;
-  height: 28px;
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 100px;
-  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.08);
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.08);
-  -webkit-transition-property: -webkit-transform, border, width;
-  transition-property: -webkit-transform, border, width;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
+  max-width: 100%;
+  height:50px;
+  word-wrap: break-word;
+  overflow: hidden;
 }
-.toggle:active .toggle-handle {
-  width: 35px;
+
+.slider > ul > li > .slider-text {
+  white-space:pre;
+  word-wrap: break-word;
 }
-.toggle.active {
-  border: 2px solid #4cd964;
-  -webkit-box-shadow: inset 0 0 0 13px #4cd964;
-  box-shadow: inset 0 0 0 13px #4cd964;
+
+.slider-text {
+  max-width: 100%;
+  position: relative;
+  margin-left: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0,0,0,.5);
+  word-wrap: break-word;
+  overflow: hidden;
 }
-.toggle.active .toggle-handle {
-  border-color: #4cd964;
-  -webkit-transform: translate3d(17px, 0, 0);
-  transform: translate3d(17px, 0, 0);
-}
-.toggle.active:active .toggle-handle,
-.toggle.active .toggle-handle:active {
-  -webkit-transform: translate3d(10px, 0, 0) !important;
-  transform: translate3d(10px, 0, 0) !important;
+
+.slider-image {
+  margin-left: 55px;
+  margin-top: 56px;
+  height: 450px;
+
 }
 
 .content.fade {
@@ -1175,66 +958,6 @@ input[type="button"] {
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), -320px 0 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), -320px 0 0 rgba(0, 0, 0, 0.1);
   }
-}
-
-@font-face {
-  font-family: "Ratchicons";
-  src: url("ratchicons/ratchicons.eot");
-  src: url("ratchicons/ratchicons.eot?#iefix") format("embedded-opentype"), url("ratchicons/ratchicons.woff") format("woff"), url("ratchicons/ratchicons.ttf") format("truetype"), url("ratchicons/ratchicons.svg#svgFontName") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-.icon {
-  display: inline-block;
-  font-family: "Ratchicons", sans-serif;
-  font-size: 24px;
-  text-decoration: none;
-  line-height: 1;
-  cursor: default;
-  -webkit-font-smoothing: antialiased;
-}
-.icon.icon-down:before {
-  content: '\f00b';
-}
-.icon.icon-download:before {
-  content: '\f005';
-}
-.icon.icon-left:before {
-  content: '\f00c';
-}
-.icon.icon-list:before {
-  content: '\f008';
-}
-.icon.icon-pages:before {
-  content: '\f000';
-}
-.icon.icon-refresh:before {
-  content: '\f009';
-}
-.icon.icon-right:before {
-  content: '\f00d';
-}
-.icon.icon-search:before {
-  content: '\f007';
-}
-.icon.icon-share:before {
-  content: '\f00a';
-}
-.icon.icon-sound:before {
-  content: '\f001';
-}
-.icon.icon-sound2:before {
-  content: '\f002';
-}
-.icon.icon-sound3:before {
-  content: '\f003';
-}
-.icon.icon-sound4:before {
-  content: '\f004';
-}
-.icon.icon-up:before {
-  content: '\f00e';
 }
 
 .background {
