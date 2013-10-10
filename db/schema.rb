@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131009183651) do
+ActiveRecord::Schema.define(version: 20131010174349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,15 +38,13 @@ ActiveRecord::Schema.define(version: 20131009183651) do
     t.integer  "locatable_id"
     t.string   "locatable_type"
     t.string   "address"
-    t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "gmaps"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "geocoded",       default: false
   end
-
-  add_index "locations", ["user_id"], name: "index_locations_on_user_id", using: :btree
 
   create_table "message_receivers", force: true do |t|
     t.integer  "message_id"
