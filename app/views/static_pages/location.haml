@@ -4,22 +4,39 @@
 #map_canvas
 
 
+.message
+
+
 = content_for :scripts do
   :coffee
     jQuery ->
-      pos = new google.maps.LatLng("#{@location.latitude}", "#{@location.longitude}")
-      mapOptions = {
-        zoom: 13
-        zoomControl: false,
-        disableDefaultUI: true,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-        center: pos
-      }
-      map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-      marker = new google.maps.Marker({
-        position: pos
-        map: map
-        title: 'Hello World!'
-      })
+      if navigator.geolocation 
+        navigator.geolocation.getCurrentPosition(acquire_position, show_error)
+      else
+        $('.message').text("Sorry, we need geolocation info")
 
-      map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+      show_error = (error) ->
+        console.log "Sorry, error" + error
+
+      acquire_position = (geo_position) ->
+        # Create a custom position object to display map
+        position = {
+          latitude: geo_position.coords.latitude
+          longitude: geo_position.coords.longitude
+        }
+        send_data(position)
+        #display_map(position)
+
+      send_data = (position) ->
+        options = {
+          url: "/location_data"
+          type: "get"
+          data: position = { position }
+          complete: received_response
+        }
+        $.ajax(options)
+
+
+      received_response = (response, status) -> 
+        console.log response
+        console.log status

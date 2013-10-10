@@ -12,7 +12,7 @@
     = yield
 
   = content_for :scripts do
-    - if current_user && !cookies[:position]   
+    - if current_user && !cookies[:position] && false
       :coffee                     
         jQuery ->                 
           # Get user location     

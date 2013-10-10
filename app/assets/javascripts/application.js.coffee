@@ -49,5 +49,3 @@ send_data = (position) ->
     data: position = { position }
   }
   $.ajax(options)
-
-
