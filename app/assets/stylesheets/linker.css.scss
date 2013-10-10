@@ -48,6 +48,7 @@ html {
 
 body {
   margin: 0;
+  overflow: hidden;
 }
 
 a {
@@ -1030,11 +1031,18 @@ input[type="button"] {
 }
 
 .slider {
-  position: absolute;
-  top:150px;
+  position: relative;
+  top:80px;
   z-index: 50;
   overflow: hidden;
   background: none;
+
+}
+
+.slider-image {
+  margin-left: 50px;
+  margin-right: auto;
+  height: 600px;
 
 }
 
@@ -1239,10 +1247,6 @@ input[type="button"] {
   z-index:5;
   background-image: url('background1.jpg');
   background-size: cover;
-}
-
-.onboarding > img {
-  z-index: 200;
 }
 
 .login-copy {
