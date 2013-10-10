@@ -16,3 +16,4 @@
 /tmp
 .env
 sorcery.rb
+/public/uploads
