@@ -1,0 +1,93 @@
+
+#map_canvas{"data-locations" => "#{@locations.to_json}"}
+
+= form_for current_user.locations.build do |f|
+  = f.text_field :address, placeHolder: "Enter An Address"
+  = f.text_field :latitude, type: "hidden"
+  = f.text_field :longitude, type: "hidden" 
+
+  = f.submit "Add Location"
+
+
+= content_for :scripts do 
+  :coffee
+    jQuery ->                  
+      linker.autocomplete('location_address')
+
+      # Will put two values into hidden fields
+      # Then run the call back   
+      fill_in_lat_lng = (callback) ->
+        if document.getElementById('location_latitude').value == "" && document.getElementById('location_address').value != ""
+          # Use google Geocode to do so   
+          address = document.getElementById('location_address').value
+            
+          geocoder = new google.maps.Geocoder()
+          geocoder.geocode({'address': address}, 
+            (results, status) -> 
+              if (status != "OK")
+                alert 'Sorry, no address found' 
+              else               
+                # Create a custom position object to display map
+                latLng = results[0].geometry.location
+                position = {     
+                  latitude: latLng.lat()          
+                  longitude: latLng.lng()         
+                }                
+                document.getElementById('location_latitude').value = position.latitude
+                document.getElementById('location_longitude').value = position.longitude
+              # If there is a callback now is the time to perform it
+              if callback and (typeof(callback) == "function")
+                callback()       
+          )                      
+        else
+          console.log "No lat/lng for address"
+          callback()             
+
+
+
+      find_lat_long = (event) -> 
+        lat = document.getElementById('location_latitude').value
+        address = document.getElementById('location_address').value 
+                                 
+        if lat != ""
+          # Perform search if values are present
+          return                 
+        else                     
+          event.preventDefault() 
+          fill_in_lat_lng(       
+            () ->                
+              # Re-read latitude 
+              lat = document.getElementById('location_latitude').value
+              # We got a vaule back 
+              if lat != ""       
+                # We can now perform a new submit
+                $('form#new_location').submit()
+          )
+
+      # Get information latitude/longitude from address        
+      $('form#new_location').on("submit", find_lat_long)
+      
+
+      mapOptions = {
+          zoom: 1
+          zoomControl: false
+          disableDefaultUI: true
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+          center: new google.maps.LatLng(0, 0)
+          
+      }
+      bounds = new google.maps.LatLngBounds()
+      map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions)
+      for marker in $('#map_canvas').data('locations')
+        console.log marker
+        pin = new google.maps.Marker({
+          position: new google.maps.LatLng(marker.latitude, marker.longitude)
+          map: map
+        })
+        bounds.extend(pin.position)
+        
+      map.fitBounds(bounds)
+
+
+      
+

@@ -49,3 +49,10 @@ send_data = (position) ->
     data: position = { position }
   }
   $.ajax(options)
+
+# Make autocomplete of address
+# string is the reference of an element
+linker.autocomplete = (string) ->
+   input = document.getElementById(string);
+   autocomplete = new google.maps.places.Autocomplete(input);
+   autocomplete.setTypes(['geocode']);
