@@ -255,6 +255,7 @@ strong {
   bottom:0;
   z-index: 10;
   overflow: auto;
+  color:red;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -267,12 +268,8 @@ strong {
   padding: 10px;
 }
 
-.padded {
-  padding: 10px;
-}
-
 .bar-nav ~ .content {
-  padding-top: 54px;
+  padding-top: 64px;
 }
 
 .bar-tab ~ .content {
@@ -287,7 +284,7 @@ strong {
   position: fixed;
   right: 0;
   left: 0;
-  z-index: 10;
+  z-index: 100;
   min-height: 54px;
   padding: 5px 10px;
   background-color: rgba(19, 25, 38, .8);
@@ -299,6 +296,7 @@ strong {
 }
 
 [class*="bar-"].bar-footer {
+  position: absolute;
   bottom: 0;
   min-height: 74px;
   background-color: #fff;
@@ -1028,13 +1026,30 @@ input[type="button"] {
 .slider,
 .slider > li {
   width: 100%;
-  height: 200px;
+  bottom:0;
 }
 
 .slider {
+  position: absolute;
+  top:150px;
+  z-index: 50;
   overflow: hidden;
-  background-color: #000;
+  background: none;
+
 }
+
+.slider .slide-text {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 300;
+  text-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+
 .slider > ul {
   position: relative;
   padding: 0;
@@ -1214,7 +1229,7 @@ input[type="button"] {
   content: '\f00e';
 }
 
-.onboard {
+.background {
   height:100%;
   width:100%;
   top:0;
@@ -1222,8 +1237,12 @@ input[type="button"] {
   // right:0;
   // bottom:0;
   z-index:5;
-  background-image: url('http://www.adamdaigian.com/img/background1.jpg');
+  background-image: url('background1.jpg');
   background-size: cover;
+}
+
+.onboarding > img {
+  z-index: 200;
 }
 
 .login-copy {

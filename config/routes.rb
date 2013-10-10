@@ -7,6 +7,8 @@ Linker::Application.routes.draw do
   # Acquire Geolocation
   get "/update_geolocation" => "users#update_geolocation", as: :update_geolocation
 
+  get "/location" => "static_pages#location", :as => "location"
+
   # You can have the root of your site routed with "root"
   root 'static_pages#index'
 
