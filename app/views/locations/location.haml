@@ -42,7 +42,8 @@
       display_map = (position) ->
         pos = new google.maps.LatLng(position.latitude, position.longitude)
         mapOptions = {
-          zoom: 15
+          zoom: 15,
+          draggable: false,
           zoomControl: false,
           disableDefaultUI: true,
           mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -51,6 +52,7 @@
         map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
         marker = new google.maps.Marker({
           position: pos
+          animation: google.maps.Animation.DROP,
           map: map
         })
         $('#map_message').fadeOut('normal') 

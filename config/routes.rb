@@ -9,8 +9,10 @@ Linker::Application.routes.draw do
 
   get "/location" => "locations#location", :as => "location"
   get "/location_data" => "locations#geolocation", :as => "geolocation"
+  get "/discover" => "static_pages#discover", :as => "discover"
 
   resources :locations
+
 
   # You can have the root of your site routed with "root"
   root 'static_pages#index'

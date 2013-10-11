@@ -13,5 +13,5 @@ class UsersController < ApplicationController
   private
     def location_params
       params.require(:position).permit(:latitude, :longitude, :geocoded)
-    end
+    end 
 end
