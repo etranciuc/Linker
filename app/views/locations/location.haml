@@ -1,10 +1,14 @@
 .bar-nav
   %h1.title Linker
 
+#map_overlay
+  #map_window
+
 #map_canvas
 
 
 .message
+  Please wait while we gather your location!
 
 
 = content_for :scripts do
@@ -41,23 +45,27 @@
       display_map = (position) ->
         pos = new google.maps.LatLng(position.latitude, position.longitude)
         mapOptions = {
-          zoom: 13
+          zoom: 15,
           zoomControl: false,
+          scrollwheel: false, 
+          disableDoubleClickZoom: true,
+          draggable: false,
           disableDefaultUI: true,
           mapTypeId: google.maps.MapTypeId.ROADMAP
           center: pos
         }
         map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
         marker = new google.maps.Marker({
-          position: pos
+          position: pos, 
+          position: map.getCenter(),
           map: map
         })
 
         # After having loaded the map, wait a short time a redirect
-        setTimeout(
-          () -> 
-            window.location.href = "http://www.google.com"
-        , 50000)
+        # setTimeout(
+        #  () -> 
+        #     window.location.href = "http://www.google.com"
+        # , 5000)
 
 
 
