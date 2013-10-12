@@ -12,6 +12,7 @@ Linker::Application.routes.draw do
   get "/discover" => "static_pages#discover", :as => "discover"
 
   resources :locations
+  resources :messages
 
 
   # You can have the root of your site routed with "root"

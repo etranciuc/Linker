@@ -60,6 +60,7 @@ class User < ActiveRecord::Base
     # Following methods works but requires total of 3 SQLs
     # User.find(likes.map(&:likee_id) & admirers.map(&:liker_id))
   end
+  alias_method :friends, :matches
 
   # Get another random user
   def find_match

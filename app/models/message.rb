@@ -3,7 +3,6 @@ class Message < ActiveRecord::Base
   has_many :message_receivers
   has_many :receivers, through: :message_receivers, source: :user
 
-
   validates :body,
     presence: true
 

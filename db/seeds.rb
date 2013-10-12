@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+%w(John Sarah Max).each do |first_name|
+  User.create(first_name: first_name)
+end
+
+

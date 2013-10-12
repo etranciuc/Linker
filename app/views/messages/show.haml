@@ -1,0 +1,11 @@
+%h1 Messages#show
+%p Find me in app/views/messages/show.html.haml
+
+Message between:
+%ul
+  %li= @message.sender.first_name
+  - @message.receivers.each do |user|
+    %li=user.first_name
+
+
+= @message.body

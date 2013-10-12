@@ -1,0 +1,16 @@
+- 5.times do 
+  %br
+= form_for @message do |f|
+  - current_user.matches.each do |match|
+    / HEADS UP, this generate multiple time the same ids
+    = check_box_tag "message[receiver_ids][]", match.id
+    = match.first_name
+
+  = f.text_area :body, placeholder:"Subject"
+  
+  = f.submit "Send Message"
+
+
+
+
+
