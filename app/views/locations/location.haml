@@ -42,10 +42,10 @@
       display_map = (position) ->
         pos = new google.maps.LatLng(position.latitude, position.longitude)
         mapOptions = {
-          zoom: 15,
-          draggable: false,
-          zoomControl: false,
-          disableDefaultUI: true,
+          zoom: 15
+          draggable: false
+          zoomControl: false
+          disableDefaultUI: true
           mapTypeId: google.maps.MapTypeId.ROADMAP
           center: pos
         }
@@ -55,7 +55,7 @@
           animation: google.maps.Animation.DROP,
           map: map
         })
-        $('#map_message').fadeOut('normal') 
+        $('#map_message').fadeOut('slow') 
 
         # Commented out until appropriate redirect ready
         # After having loaded the map, wait a short time a redirect
