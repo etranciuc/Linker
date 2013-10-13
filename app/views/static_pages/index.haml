@@ -1,5 +1,9 @@
 %header.bar-nav
+  %a.button 
+    = image_tag (src="settings.svg")
   %h1.title Linker
+  %a.button 
+    = image_tag (src="settings.svg")
 
 .background
 
@@ -8,13 +12,16 @@
     .slider
       %ul
         %li
-          %span.slider-text Find interesting professionals in your area.
+          %p See interesting people 
+          %p in your area.
           =image_tag "linker_phone.png", :class => "slider-image"
         %li
-          %span.slider-text 'Like' or 'pass' on Linker's suggestions.
+          %p 'Like' or 'pass' on Linker's 
+          %p suggestions.
           =image_tag "linker_phone.png", :class => "slider-image"
         %li
-          %span.slider-text Chat with new connections!
+          %p Chat with new your 
+          %p new matches.
           =image_tag "linker_phone.png", :class => "slider-image"  
              
     
@@ -24,7 +31,7 @@
 .bar-footer
   .button-login
     - if current_user
-      %h1 Welcome #{current_user.profile.first_name}
+      %p.logged-in Welcome #{current_user.profile.first_name}
     - else
       = link_to 'Login with LinkedIn', auth_at_provider_path(:provider => :linkedin)
   .login-copy We never post anything to LinkedIn.

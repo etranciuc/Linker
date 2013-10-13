@@ -1,15 +1,30 @@
+@font-face {
+  font-family: 'Kite One';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Kite One'), local('KiteOne-Regular'), url(http://themes.googleusercontent.com/static/fonts/kiteone/v1/VNHoD96LpZ9rGZTwjozAOnYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+}
+
 #map_overlay {
   position: absolute;
   height:100%;
   width: 100%;
   z-index:2;
-  opacity:.9;
+  opacity: .8;
   background-image: url(map_layer.svg);
+  // color: rgba(85, 50, 133, .85);
+  // background : -webkit-linear-gradient(top, #ff57c6 0%, #a542fd 100%);
+  // background : -moz-linear-gradient(top, #ff57c6 0%, #a542fd 100%);
+  // background : -ms-linear-gradient(top, #ff57c6 0%, #a542fd 100%);
+  // background : -o-linear-gradient(top, #ff57c6 0%, #a542fd 100%);
+  // background : linear-gradient(top, #ff57c6 0%, #a542fd 100%);
+  // -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+  // box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
   background-size: cover;
 }
 
 #map_message {
-  position:absolute;
+  position: absolute;
   margin-top: 400px;
   width: 100%;
   color: #fff;
@@ -21,6 +36,7 @@
 #map_message > p {
   position: relative;	
   text-align: center;
+  font-family: 'Kite One';
 }
 
 #map_canvas {
