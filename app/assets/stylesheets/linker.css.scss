@@ -331,12 +331,15 @@ strong {
   display: block;
   width: 100%;
   padding: 0;
-
-  font-weight: 100;
   margin-top: -44px;
+  font-weight: 100;
   color: #FFF;
   text-align: center;
   white-space: nowrap;
+}
+
+#down {
+  margin-top: 14px;
 }
 
 > a:not([class*="button"]) {
