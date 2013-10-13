@@ -967,7 +967,7 @@ input[type="button"] {
   left:0;
   // right:0;
   // bottom:0;
-  z-index:5;
+  z-index:-1;
   background-image: url('background1.jpg');
   background-size: cover;
 }
@@ -983,6 +983,5 @@ input[type="button"] {
 }
 
 .settings {
-  image: url(settings.svg);
-  z-index:200;
+  background-image: url(settings.svg);
 }

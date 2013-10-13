@@ -1,2 +1,15 @@
-.bar-nav.discover
-  %h1.title Linker
+#content.snap-content.background
+  %header.bar-nav
+    %a.button#toggle-left
+      %i.settings
+    %h1.title Linker
+    %a.button#toggle-right
+      %i.settings
+
+
+
+
+= content_for :scripts do
+  :coffee
+    jQuery ->
+      snapper = new Snap(element: document.getElementById("content"))
