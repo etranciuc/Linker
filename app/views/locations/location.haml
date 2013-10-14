@@ -1,5 +1,5 @@
 %header.bar-nav
-  %h1.title#location Linker
+  %h1.title#down Linker
 
 
 #map_overlay
@@ -60,10 +60,12 @@
 
         # Commented out until appropriate redirect ready
         # After having loaded the map, wait a short time a redirect
-        # setTimeout(
-        #  () -> 
-        #    window.location.href = "http://www.google.com"
-        #, 5000)
+        setTimeout(
+          () ->
+            $('body').fadeOut('fast') 
+            window.location.href = "/discover"
+        
+        , 3000)
 
       
 
