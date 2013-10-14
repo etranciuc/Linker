@@ -431,12 +431,13 @@ strong {
   margin-top: 44px;
   list-style: none;
   background: none;
+  color: #fff;
 }
 .table-view li {
   position: relative;
   padding: 11px 60px 11px 0;
   margin-left: 15px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(124, 124, 124, 0.5);
 }
 .table-view li:last-child {
   border-bottom: 0;
@@ -1009,6 +1010,13 @@ input[type="button"] {
   top:0;
   left:0;
   background: #fff;
+}
+
+.profile {
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(85, 172, 238, 1); 
 }
 
 .login-copy {
