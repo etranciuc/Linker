@@ -16,6 +16,24 @@
           transform: translate3d(0, 0, 0);
 }
 
+.snap-content:before {
+    box-shadow: -15px 0 15px -15px inset;
+    content: " ";
+    height: 100%;
+    left: -15px;
+    position: absolute;
+    top: 0;
+    width: 15px;
+}
+.snap-content:after {
+    box-shadow: 15px 0 15px -15px inset;
+    content: " ";
+    height: 100%;
+    position: absolute;
+    right: -15px;
+    width: 15px;
+}
+
 .snap-drawers {
   position: absolute;
   top: 0;
