@@ -1,44 +1,46 @@
 .snap-drawers
-  .snap-drawer.snap-drawer-left#left-drawer
-    %ul.list
-    %h2 
-      Snap.js
-      %li.list-divider
+  .snap-drawer.snap-drawer-left#left-drawer#menu
+    %header.bar-settings
+      .title#down 
+        %h1#settings Settings
+    %ul.table-view
+      %li.list
         Share
-      %li.list-divider
+      %li.list
         Share
-      %li.list-divider
+      %li.list
         Share
-      %li.list-divider
+      %li.list
         Share
-      %li.list-divider
+      %li.list
         Share
-      %li.list-divider
+      %li.list
         Share
-      %li.list-divider
+      %li.list
         Share
 
-  .snap-drawer.snap-drawer-right#right-drawer
-    %ul.list
-    %h2 
-      Snap.js
-      %li.list-divider
+  .snap-drawer.snap-drawer-right#right-drawer#inbox.background
+    %header.bar-settings
+      .title#down 
+        %h1#settings Messages
+    %ul.table-view
+      %li.list
         Share
-      %li.list-divider
+      %li.list
         Share
-      %li.list-divider
+      %li.list
         Share
-      %li.list-divider
+      %li.list
         Share
-      %li.list-divider
+      %li.list
         Share
-      %li.list-divider
+      %li.list
         Share
-      %li.list-divider
-        Share    
+      %li.list
+        Share
 
 
-#content.snap-content.background
+#content.snap-content.background-discover
   %header.bar-nav
     %a.button#toggle-left
       = image_tag (src="settings.svg")
