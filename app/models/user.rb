@@ -66,6 +66,7 @@ class User < ActiveRecord::Base
   def find_match
     reject_list = likes.map(&:likee_id) + [self.id]
     user = User.where("id not in (?)", reject_list).limit(1).order("RANDOM()")
+    return user.empty? ? nil : user.first
   end
 
   #################################

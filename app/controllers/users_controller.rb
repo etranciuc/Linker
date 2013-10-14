@@ -10,8 +10,13 @@ class UsersController < ApplicationController
     end
   end
 
+
+  def discover
+    @match = current_user.find_match
+  end
+
   private
     def location_params
       params.require(:position).permit(:latitude, :longitude, :geocoded)
-    end 
+    end
 end

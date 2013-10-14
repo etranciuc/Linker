@@ -62,6 +62,12 @@
     %a.button#toggle-right
       = image_tag (src="messages_line.svg")
 
+    - if !@match.nil?
+      %h1= @match.first_name 
+      = form_for Like.new do |f|
+        = f.hidden_field :likee_id, value: @match.id
+        = f.submit "Like"
+      %button Next
 
 
 = content_for :scripts do
