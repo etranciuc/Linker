@@ -354,7 +354,7 @@ strong {
   position: relative;
   font-size: 20px;
   font-weight: 100;
-  margin-left: -120px; 
+  margin-left: -120px;
   margin-top: -5px;
 }
 
@@ -672,6 +672,21 @@ select {
   margin-top: 5px;
   padding: 12px;
 }
+
+[class*="button-next"] {
+  display: block;
+  height: 200px;
+  width: 200px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(85, 172, 238, 1);
+  background-color: transparent;
+  margin-top: 0;
+  border: 1px solid rgba(85, 172, 238, 1);
+  border-radius: 100px;
+}
+
 
 .button-login > a {
   color: rgba(85, 172, 238, 1);
@@ -1016,14 +1031,14 @@ input[type="button"] {
   height: 48px;
   width: 48px;
   border-radius: 50%;
-  border: 2px solid rgba(85, 172, 238, 1); 
+  border: 2px solid rgba(85, 172, 238, 1);
 }
 
 .login-copy {
   font-size: 10px;
   text-align: center;
 }
- 
+
 .logged-in {
   position: relative;
   margin:auto;

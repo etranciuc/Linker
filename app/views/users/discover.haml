@@ -1,4 +1,5 @@
 = render "/menu/menu"
+
 #content.snap-content.background-discover
   %header.bar-nav
     %a.button#toggle-left
@@ -7,15 +8,17 @@
     %a.button#toggle-right
       = image_tag (src="messages_line.svg")
 
-  .content.discover
-    .swipe
-  - if !@match.nil?
-    %h1= @match.first_name
-    = form_for Like.new do |f|
-      = f.hidden_field :likee_id, value: @match.id
-      = f.submit "Like"
+  .content
+    .discover
+    - if !@match.nil?
+      %h1= @match.first_name
+    .inline
+      %button.button.button-next Next
+      = form_for Like.new do |f|
+        = f.hidden_field :likee_id, value: @match.id
+        = f.button "Like", :class => 'button button-like'
 
-    %button Next
+
 
 
 = content_for :scripts do
